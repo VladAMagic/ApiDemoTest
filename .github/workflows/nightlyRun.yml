@@ -5,6 +5,7 @@ on:
         - cron: '0 22 * * 1-6'
 jobs:
     Nightly_Build:
+        if: false
         runs-on: ubuntu-latest
         steps:
             - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
