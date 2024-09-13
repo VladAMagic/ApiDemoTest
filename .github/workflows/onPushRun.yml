@@ -1,0 +1,14 @@
+name: On Push Run
+run-name: Running regression suite tests
+on: [push]
+jobs:
+    Push_Run:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+            - name: Check out repository code
+              uses: actions/checkout@v4
+            - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+            - run: npm install
+            - run: npm test ./test/P0/*.spec.ts
+            - run: echo "This job's status is ${{ job.status }}."
