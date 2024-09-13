@@ -6,7 +6,7 @@ Pre-requisites:
 - npm
 
 To run, clone repository, and in terminal execute following:
-npm install
-npm test
+- npm install
+- npm test
 
 GitHub Actions can be found in .github/workflows folders.
