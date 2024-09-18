@@ -11,7 +11,7 @@ describe('POST users', () => {
 
     test('success', async () => {
         const userData = UserFactory.default()
-        console.log(axios.defaults.baseURL)
+        console.log(axios.defaults.baseURL + 'BASE URL IS HERE')
         console.log(axios.defaults.headers.common.Authorization)
 
         const response = await axios.post(endpoint, userData)
