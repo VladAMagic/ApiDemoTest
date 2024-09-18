@@ -1,13 +1,15 @@
 import axios from 'axios'
 
-describe('First test', () => {
+describe('GET users', () => {
     beforeAll(() => {})
     afterAll(() => {})
 
     beforeEach(() => {})
     afterEach(() => {})
 
-    test('get list of users', async () => {
+    test('success', async () => {
+        console.log(axios.defaults.baseURL + 'BASE URL IS HERE')
+        console.log(axios.defaults.headers.common.Authorization)
         let response
         try {
             response = await axios.get('/users')
