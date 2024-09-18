@@ -2,8 +2,6 @@ export class TokenManager {
     public async fetchToken() {
         let tokenValue = await this.checkIfTokenExists('tokenKey')
         if (tokenValue) {
-            console.log('token!!!' + tokenValue)
-
             return tokenValue
         }
         tokenValue = await this.getNewTokenFromAuthEndpoint()
@@ -12,6 +10,8 @@ export class TokenManager {
     async checkIfTokenExists(tokenKey: string): Promise<string | boolean> {
         // Code to check if token exists in a config file AND is valid. If not, return false
         const token = process.env.ACCESS_TOKEN
+        console.log('token!!!' + token)
+
         if (token && (await this.verifyTokenValidity(token))) {
             return token
         }
