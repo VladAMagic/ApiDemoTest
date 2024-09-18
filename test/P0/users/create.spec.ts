@@ -11,8 +11,10 @@ describe('POST users', () => {
 
     test('success', async () => {
         const userData = UserFactory.default()
-        const response = await axios.post(endpoint, userData)
+        console.log(axios.defaults.baseURL)
+        console.log(axios.defaults.headers.common.Authorization)
 
+        const response = await axios.post(endpoint, userData)
         expect(response.status).toBe(201)
         expect(response.data).toHaveProperty('id')
         expect(response.data.name).toBe(userData.name)

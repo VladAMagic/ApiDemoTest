@@ -6,7 +6,7 @@ console.log(`============ testSetupFile Loaded ===========`)
 jest.setTimeout(99999999)
 
 jest.retryTimes(0, { logErrorsBeforeRetry: true })
-axios.defaults.baseURL = process.env.BASE_URL
+axios.defaults.baseURL = global.baseUrl
 
 beforeAll(async () => {
     await new TokenManager().fetchToken().then((token: any) => {
