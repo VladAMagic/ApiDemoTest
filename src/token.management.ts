@@ -2,7 +2,7 @@ export class TokenManager {
     public async fetchToken() {
         let tokenValue = await this.checkIfTokenExists('tokenKey')
         if (tokenValue) {
-            console.log('token')
+            console.log('token!!!' + tokenValue)
 
             return tokenValue
         }
