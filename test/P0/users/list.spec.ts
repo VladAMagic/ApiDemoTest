@@ -8,8 +8,6 @@ describe('GET users', () => {
     afterEach(() => {})
 
     test('success', async () => {
-        console.log(axios.defaults.baseURL + 'BASE URL IS HERE')
-        console.log(axios.defaults.headers.common.Authorization)
         let response
         try {
             response = await axios.get('/users')
